@@ -7,9 +7,9 @@
 aucGARP(n, x, points)
 }
 \arguments{
-\item{n}{a numeric value specifying the number of models in the best subset outputted by DesktopGARP.}
+\item{n}{a numeric value specifying the number of models in the best subset outputted by DesktopGARP}
 
-\item{x}{a raster object of the summated raster of the best models output by DesktopGARP.}
+\item{x}{a raster object of the summated raster of the best models output by DesktopGARP}
 
 \item{points}{a spatial object of presence data to use for testing locations}
 }
@@ -38,7 +38,7 @@ When calculating AUC for discrete cutpoints (\code{n}), represented by the numbe
   r   <- raster(ncols = 100, nrows = 100)
   r[] <- rbinom(5, 10, 0.3)
   hs  <- data.frame("Latitude" = c(-89, 72, 63, 42, 54), "Longitude" = c(-12, 13, 24, 26, 87), "Species" = rep("Homo_sapiens", 5))
-  aucGARP(n = 10, x = r, points = SpatialPointsDataFrame(hs[,1:2], data = hs))
+  aucGARP(n = 10, x = r, points = SpatialPoints(hs[,1:2]))
 
 }
 \references{

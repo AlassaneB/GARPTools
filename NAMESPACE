@@ -2,3 +2,7 @@
 
 export(aucGARP)
 export(centroid)
+export(checkData)
+export(commissionGARP)
+export(confuseMatrix)
+export(omissionGARP)
