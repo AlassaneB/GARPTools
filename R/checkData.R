@@ -17,6 +17,9 @@
 #'   hs  <- data.frame("Latitude" = c(-89, 72, 63, 42, 54), "Longitude" = c(-12, 13, 24, 26, 87), "Species" = rep("Homo_sapiens", 5))
 #'   checkData(points = SpatialPoints(hs[,1:2]), grid = r)
 #'
+#' @import raster
+#' @import sp
+#'
 #' @export
 
 checkData <- function(points, grid, mask = NULL){

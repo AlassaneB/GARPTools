@@ -31,6 +31,10 @@
 #'   aucGARP(n = 10, x = r, points = SpatialPoints(hs[,1:2]))
 #'
 #' @references Cortes, C. and Mohri, M. (2004) Confidence Intervals for the Area Under the ROC curve. \emph{Advances in Neural Information Processing Systems}. \bold{6}.
+#'
+#' @import sp
+#' @import raster
+#'
 #' @export
 
 aucGARP <- function(n, x, points){

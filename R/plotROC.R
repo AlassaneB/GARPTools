@@ -1,27 +1,18 @@
-#' Calculates the confusion matrix
+#' Plots the Receiver Operating Charactersitic (ROC) Curve
 #'
-#' \code{confuseMatrix} Returns the confusion matrix containing the sensitivity and specificity of the best model subset of a DeskstopGARP.
+#' \code{plotROC} Plots the ROC curve of the best model subset output by DesktopGARP, relating 1-model specificity (false positive; z-axis) to model sensitivity (true positive; y-axis)
 #'
 #' @param n a numeric value specifying the number of models in the best subset outputted by DesktopGARP
 #' @param x a raster object of the summated raster of the best models output by DesktopGARP
 #' @param points a spatial object of presence data to use for testing locations
 #'
-#' @return A data.frame object containing:
-#'  \itemize{
-#'   \item \code{a} True positive
-#'   \item \code{b} False negative
-#'   \item \code{c} False positive
-#'   \item \code{d} True negative
-#'   \item \code{sensitivity} the proportion of occupied pixels correctly predicted as present
-#'   \item \code{specificity} the proportion of non-occupied pixels correctly predicted as absent
-#'   \item \code{1-specificity} the proportion of non-occupied pixels incorrectly predicted as present
-#'  }
+#' @return A plot of the ROC curve.
 #'
 #' @details For discrete cutpoints (\code{n}), represents the number of models that agree on a predicted presence location.
 #'
 #' The raster object (\code{x}) should be a raster representing the number of models that agree on a predicted presence location per pixel and that outtput by \code{\link{sumRasters}}.
 #'
-#' The shapefile \code{points} should presence locations that were not used by DesktopGARP for model training and those output by \code{\link{splitData}}
+#' The shapefile \code{points} should presence locations that were not used by DesktopGARP for model training and those output by \code{\link{splitData}}.
 #'
 #' @seealso \code{\link{aucGARP}}
 #'
@@ -30,14 +21,14 @@
 #'   r   <- raster(ncols = 100, nrows = 100)
 #'   r[] <- rbinom(5, 10, 0.3)
 #'   hs  <- data.frame("Latitude" = c(-89, 72, 63, 42, 54), "Longitude" = c(-12, 13, 24, 26, 87), "Species" = rep("Homo_sapiens", 5))
-#'   confuseMatrix(n = 10, x = r, points = SpatialPoints(hs[,1:2]))
+#'   plotROC(n = 10, x = r, points = SpatialPoints(hs[,1:2]))
 #'
 #' @import raster
 #' @import sp
 #'
 #' @export
 
-confuseMatrix <- function(n, x, points){
+plotROC <- function(n, x, points){
 
   #Extract values from summated grid at test point locations
   grid = x
@@ -73,7 +64,24 @@ confuseMatrix <- function(n, x, points){
     cutpoints$one.specificity[i] <- 1-(cutpoints$b[i]/(cutpoints$b[i] + cutpoints$d[i]))
   }
 
-  df <- data.frame(cutpoints$cutpoint, cutpoints$a, cutpoints$b, cutpoints$c, cutpoints$d, cutpoints$sensitivity, 1-cutpoints$one.specificity, cutpoints$one.specificity)
-  colnames(df) <- c("Models", "a", "b", "c", "d", "sensitivity", "specificity", "1-specificity")
-  return(df)
+  #Calculate AUC value for each cutpoint
+  for(i in 1:dim(cutpoints)[1]){
+    cutpoints$AUC[i] <- ifelse(cutpoints[i,1] == 0, (((1+cutpoints$sensitivity[i])/2) * (1-cutpoints$one.specificity[i])),
+                               (((cutpoints$sensitivity[i] + cutpoints$sensitivity[i-1])/2) * (cutpoints$one.specificity[i-1] - cutpoints$one.specificity[i])))
+  }
+
+  #Plot ROC
+  plot(cutpoints$one.specificity,cutpoints$sensitivity,
+       main = paste("ROC Curve of ", n, " Best Models", sep = ""),
+       type = "l", col = "blue", lwd = 2, tck = -0.02,
+       xlab = "False Positive (1-specificity)",
+       ylab = "True Positive (sensitivity)",
+       ylim = c(0,1.0),
+       xlim = c(0,1.0))
+  lines(seq(max(cutpoints$one.specificity), 1, length.out = 2),
+        c(max(cutpoints$sensitivity),max(cutpoints$sensitivity)), col = "blue", lwd = 2)
+  lines(seq(0, 1, 0.1), seq(0, 1, 0.1),lty = 2, lwd = 1)
+  points(cutpoints$one.specificity, cutpoints$sensitivity, pch = 16)
+  legend("bottomright", legend = (c("Models", "Reference")), cex = 0.85,
+         bg = "", bty = "n", col = c("blue", "black"), lty = c(1,2), lwd = c(2,2))
 }

@@ -26,6 +26,9 @@
 #' commissionGARP(n = 10, x = sum.raster, points = test_1, file.path = "C/GARPruns/BestSubsets/")
 #' }
 #'
+#' @import raster
+#' @import sp
+#'
 #' @export
 
 commissionGARP <- function(n, x, points, file.path){
