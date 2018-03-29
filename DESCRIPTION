@@ -1,0 +1,14 @@
+Package: GARPTools
+Type: Package
+Title: Tools for DesktopGARP Data Prep and Model Evaluation
+Version: 0.1.0
+Author: Catherine G. Haase, Anni Yang, Jason K. Blackburn
+Maintainer: Catherine G. Haase <cghaase@gmail.com>
+Description: The GARPTools package provides tools to prepare data for input into DesktopGARP (the genetic algorithm for rule-set prediction) and for the 
+    evaluation of the accuracy of output models. GARP is a software package for biodiversity and ecological research that allows the user to predict 
+    and analyze wild species distributions. GARP is a presence-only genetic algorithm that models species’ potential geographic distributions through 
+    an iterative process of training and testing that occurs through resampling and replacement of input data.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
