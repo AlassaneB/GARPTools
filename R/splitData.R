@@ -22,6 +22,8 @@
 #'
 #' @import raster
 #' @import sp
+#' @import xlsx
+#' @import rJava
 #'
 #' @export
 
