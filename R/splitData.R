@@ -22,7 +22,6 @@
 #'
 #' @import raster
 #' @import sp
-#' @import xlsx
 #' @importFrom maptools writeSpatialShape
 #'
 #' @export
