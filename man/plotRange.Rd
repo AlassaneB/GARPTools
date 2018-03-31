@@ -4,7 +4,8 @@
 \alias{plotRange}
 \title{Plots the rescaled median ranges for environment variables}
 \usage{
-plotRange(file, colour, n, xlabel, ylabel)
+plotRange(file, colour = "purple", n = 1,
+  xlabel = "Environmental Variables", ylabel = "Median Range")
 }
 \arguments{
 \item{file}{a data.frame of the rescaled range, and the median of the minimum and maximum values for each environmental variables used in DesktopGARP. Produced by \code{\link{rescale}}}

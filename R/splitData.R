@@ -24,6 +24,7 @@
 #' @import sp
 #' @import xlsx
 #' @import rJava
+#' @importFrom maptools writeSpatialShape
 #'
 #' @export
 

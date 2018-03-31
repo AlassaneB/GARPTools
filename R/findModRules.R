@@ -16,6 +16,7 @@
 #'
 #' @import sp
 #' @import raster
+#' @importFrom SDMTools ZonalStat
 #'
 #' @export
 

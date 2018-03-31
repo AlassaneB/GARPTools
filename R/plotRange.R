@@ -17,7 +17,7 @@
 #' @export
 
 
-plotRange<-function(file, colour,n,xlabel,ylabel){
+plotRange<-function(file, colour = "purple",n = 1,xlabel = "Environmental Variables",ylabel = "Median Range"){
   rescaledcsv<-file
   rescaledcsv$Mean<-rescaledcsv$Range/2
   MedRange<-ggplot(rescaledcsv, aes(x=RuleNames, y=Mean))+coord_flip()+geom_errorbar(aes(ymin=rescaledcsv$MedMinimum,
