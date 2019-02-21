@@ -4,8 +4,8 @@
 \alias{sumRasters}
 \title{Sums rasters of the best subset models output by DesktopGARP}
 \usage{
-sumRasters(file.path, output = FALSE, output.path = NULL, format = NULL,
-  over.write = FALSE)
+sumRasters(file.path, output = FALSE, output.path = NULL,
+  format = NULL, over.write = FALSE)
 }
 \arguments{
 \item{file.path}{path to the location of output rasters to sum (usually found in "GARPruns" folder output by DesktopGARP)}
