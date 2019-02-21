@@ -1,7 +1,7 @@
 Package: GARPTools
 Type: Package
 Title: Tools for DesktopGARP Data Prep and Model Evaluation
-Version: 0.1.0
+Version: 1.0.0
 Author: Catherine G. Haase, Anni Yang, Jason K. Blackburn
 Maintainer: Catherine G. Haase <cghaase@gmail.com>
 License: What license is it under?
