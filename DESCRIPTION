@@ -11,3 +11,4 @@ RoxygenNote: 6.1.1
 Imports: SDMTools,
     knitr,
     rmarkdown
+VignetteBuilder: knitr
