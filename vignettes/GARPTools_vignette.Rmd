@@ -50,6 +50,7 @@ wtdeer_locations
 
 Organize the environmental layers to use in GARP by first making a list of files that are installed with the GARPTools package. Then create a rasterStack out of the list to save each raster to a "raster" folder in the working directory:
 ```{r eval = TRUE, echo = FALSE}
+library(raster)
 data("env_layers")
 writeRaster(env_layers[[1]], "C:/GARP/rasters/alt.asc", overwrite=TRUE)
 writeRaster(env_layers[[2]], "C:/GARP/rasters/bio_1.asc", overwrite=TRUE)
