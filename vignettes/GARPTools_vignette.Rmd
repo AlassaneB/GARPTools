@@ -58,9 +58,15 @@ load(files1[1])
 load(files1[2])
 load(files1[3])
 # env_layers <- stack(files)
+<<<<<<< HEAD
 # writeRaster(alt, "C:/GARP/rasters/alt.asc", overwrite = TRUE)
 # writeRaster(bio_1, "C:/GARP/rasters/alt.asc", overwrite = TRUE)
 # writeRaster(bio_12, "C:/GARP/rasters/alt.asc", overwrite = TRUE)
+=======
+writeRaster(alt, "C:/GARP/rasters/alt.asc", overwrite = TRUE)
+writeRaster(bio_1, "C:/GARP/rasters/alt.asc", overwrite = TRUE)
+writeRaster(bio_12, "C:/GARP/rasters/alt.asc", overwrite = TRUE)
+>>>>>>> 842d4e96c7efe947d8e392bbc62c1d4732d11e95
 
 # writeRaster(env_layers[[2]], "C:/GARP/rasters/bio_1.asc")
 # writeRaster(env_layers[[3]], "C:/GARP/rasters/bio_12.asc")
