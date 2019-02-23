@@ -53,10 +53,6 @@ Organize the environmental layers to use in GARP by first making a list of files
 data(alt)
 data(bio_1)
 data(bio_12)
-<<<<<<< HEAD
-
-=======
->>>>>>> 56cfa673941806d2d7212e4e548ae777a0eeb264
 
 ```
 
