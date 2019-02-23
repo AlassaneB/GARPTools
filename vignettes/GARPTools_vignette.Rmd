@@ -85,6 +85,10 @@ data("alt")
 
 ##2.1. Resample raster files and convert to ASCII
 In order for DesktopGARP to use the environmental layers in its analysis, the rasters must be of the same spatial resolution and extent. The `rasterPrep` function resamples the rasters used in the analysis to the same spatial resolution (i.e. cell size) and extent of a sample raster. The user can define the sample raster using the `res.raster` argument or define the number of cells in a raster row using `cells`; both default as `NULL`. If neither argument is used, the raster with the largest resolution will be defined as the sample raster and all other rasters will be resampled to that spatial resolution. The spatial extent of the rasters can also be defined using the `mask` argument, which reads in a shapefile of the user-defined study area. The rasters are written as ".asc" files to ensure the headers of the files are in the correct format for DekstopGARP. **NOTE:** The rasterPrep function may take some time if the spatial resolution is small or there are many rasters to resample.Make sure ONLY the rasters that need to be resampled are in the "raster" folder specified by the `file.path` argument.
+```{r, eval = TRUE, echo = FALSE}
+library(SDMTools)
+```
+
 
 ```{r comment = "R>", warning = FALSE, message = FALSE, results = "hide"}
 rasterPrep(file.path = "C:/GARP/rasters", mask = nc_boundary, 
