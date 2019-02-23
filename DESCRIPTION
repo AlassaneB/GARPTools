@@ -13,4 +13,5 @@ VignetteBuilder: knitr,
 Imports: 
     SDMTools,
     rmarkdown,
-    knitr
+    knitr,
+    raster
