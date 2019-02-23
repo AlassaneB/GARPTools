@@ -49,7 +49,7 @@ wtdeer_locations
 ```
 
 Organize the environmental layers to use in GARP by first making a list of files that are installed with the GARPTools package. Then create a rasterStack out of the list to save each raster to a "raster" folder in the working directory:
-```{r eval = TRUE, echo = FALSE}
+```{r eval = FALSE, echo = FALSE}
 data("env_layers")
 
 ```
@@ -66,7 +66,7 @@ writeRaster(env_layers[[3]], "C:/GARP/rasters/bio_12.asc", overwrite=TRUE)
 ```
 
 Plotting the raster stack allows for the visualization of all environmental layers (Figure 1).
-```{r comment = "R>", fig.height=2, fig.align = "center", fig.cap = "Three example environmental layers used in DesktopGARP experimental runs."}
+```{r comment = "R>", eval = FALSE, fig.height=2, fig.align = "center", fig.cap = "Three example environmental layers used in DesktopGARP experimental runs."}
 plot(env_layers, nc = 3)
 ```
 
@@ -74,7 +74,7 @@ Now add the boundary of the sampling area and sampling points to the altitude la
 ```{r comment = "R>", echo = -1, fig.width=4, fig.height=3, fig.align = "center", fig.cap = "Altitude of sampling area with sampling points."}
 par(mar=c(3,2,2,1))
 data("nc_boundary")
-plot(env_layers[[1]])
+plot(nc_boundary)
 plot(nc_boundary, add = TRUE)
 points(wtdeer_locations)
 ```

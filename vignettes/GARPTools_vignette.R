@@ -10,7 +10,7 @@ data("wtdeer_locations")
 wtdeer_locations
 
 ## ----eval = TRUE, echo = FALSE-------------------------------------------
-data(env_layers)
+data("env_layers")
 
 
 ## ----eval = FALSE, echo = TRUE-------------------------------------------
