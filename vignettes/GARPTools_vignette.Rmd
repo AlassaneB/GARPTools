@@ -78,9 +78,8 @@ data("alt")
 plot(alt)
 
 # plot(nc_boundary, add = TRUE)
-plot(nc_boundary, add = TRUE)
 
-points(wtdeer_locations)
+# points(wtdeer_locations)
 ```
 **GARPTools** provides tools to prepare the data files for DesktopGARP with functions that will resample and crop environmental layers to study areas and split presence locations into training and testing data sets.
 
