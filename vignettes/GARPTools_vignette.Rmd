@@ -52,18 +52,9 @@ Organize the environmental layers to use in GARP by first making a list of files
 ```{r eval = TRUE, echo = FALSE}
 files1 <- list.files(path=paste(system.file(package="GARPTools"),"/data", sep = ""),
                     pattern = ".rda", full.names = TRUE)
-# files2 <- list.files(path=paste(system.file(package="GARPTools"),"/data", sep = ""),                     pattern = "task", full.names = TRUE)
-# files <- files1[!files1 %in% files2]
 load(files1[1])
 load(files1[2])
 load(files1[3])
-# env_layers <- stack(files)
-# writeRaster(alt, "C:/GARP/rasters/alt.asc", overwrite = TRUE)
-# writeRaster(bio_1, "C:/GARP/rasters/alt.asc", overwrite = TRUE)
-# writeRaster(bio_12, "C:/GARP/rasters/alt.asc", overwrite = TRUE)
-
-# writeRaster(env_layers[[2]], "C:/GARP/rasters/bio_1.asc")
-# writeRaster(env_layers[[3]], "C:/GARP/rasters/bio_12.asc")
 
 env_layers <- stack(alt, bio_1,bio_12)
 ```
