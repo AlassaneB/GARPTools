@@ -76,7 +76,11 @@ par(mar=c(3,2,2,1))
 data("nc_boundary")
 data("alt")
 plot(alt)
+<<<<<<< HEAD
 # plot(nc_boundary, add = TRUE)
+=======
+plot(nc_boundary, add = TRUE)
+>>>>>>> 1c891c4df23b2aefb5a7f0d00f0a9e71beaff475
 points(wtdeer_locations)
 ```
 **GARPTools** provides tools to prepare the data files for DesktopGARP with functions that will resample and crop environmental layers to study areas and split presence locations into training and testing data sets.
