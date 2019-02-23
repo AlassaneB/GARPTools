@@ -53,7 +53,11 @@ Organize the environmental layers to use in GARP by first making a list of files
 data(alt)
 data(bio_1)
 data(bio_12)
+<<<<<<< HEAD
 env_layers <- stack(alt, bio_1, bio_12)
+=======
+
+>>>>>>> 6803680e2609b230e829b4817befb98012a2644f
 ```
 
 ```{r eval = FALSE, echo = TRUE}
