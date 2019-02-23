@@ -49,8 +49,11 @@ wtdeer_locations
 ```
 
 Organize the environmental layers to use in GARP by first making a list of files that are installed with the GARPTools package. Then create a rasterStack out of the list to save each raster to a "raster" folder in the working directory:
-```{r eval = FALSE, echo = FALSE}
+```{r eval = TRUE, echo = FALSE}
 data("env_layers")
+writeRaster(env_layers[[1]], "C:/GARP/rasters/alt.asc", overwrite=TRUE)
+writeRaster(env_layers[[2]], "C:/GARP/rasters/bio_1.asc", overwrite=TRUE)
+writeRaster(env_layers[[3]], "C:/GARP/rasters/bio_12.asc", overwrite=TRUE)
 
 ```
 
@@ -75,11 +78,7 @@ Now add the boundary of the sampling area and sampling points to the altitude la
 par(mar=c(3,2,2,1))
 data("nc_boundary")
 data("alt")
-plot(alt)
 
-# plot(nc_boundary, add = TRUE)
-
-# points(wtdeer_locations)
 ```
 **GARPTools** provides tools to prepare the data files for DesktopGARP with functions that will resample and crop environmental layers to study areas and split presence locations into training and testing data sets.
 
