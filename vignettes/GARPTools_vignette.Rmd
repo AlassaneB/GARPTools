@@ -50,13 +50,11 @@ wtdeer_locations
 
 Organize the environmental layers to use in GARP by first making a list of files that are installed with the GARPTools package. Then create a rasterStack out of the list to save each raster to a "raster" folder in the working directory:
 ```{r eval = TRUE, echo = FALSE}
-files1 <- list.files(path=paste(system.file(package="GARPTools"),"/data", sep = ""),
-                    pattern = ".rda", full.names = TRUE)
-load(files1[1])
-load(files1[2])
-load(files1[3])
+data(alt)
+data(bio_1)
+data(bio_12)
 
-env_layers <- stack(alt, bio_1,bio_12)
+
 ```
 
 ```{r eval = FALSE, echo = TRUE}
