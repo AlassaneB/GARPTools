@@ -57,3 +57,11 @@ plot(alt_resample)
 points(wtdeer_locations, pch = 16)
 points(wtdeer_centroids, col = "purple")
 
+## ---- eval=TRUE, echo=FALSE----------------------------------------------
+library(rJava)
+library(xlsx)
+
+## ----comment = "R>"------------------------------------------------------
+splitData(points = wtdeer_centroids, p = 0.75, type = "all", iterations = 10, 
+          output = TRUE, output.path = "C:/GARP/wtdeer")
+

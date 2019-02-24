@@ -144,20 +144,17 @@ Collapsing the 10 individual binary presence/absence ESRI grids from the BestSub
 First read in the rasterStack of the ESRI grids available in the GARPTools package and write them into a "BestSubsets" folder to simulate the output from GARP:
 
 ```{r eval = TRUE, echo = FALSE}
-files1 <- list.files(path=paste(system.file(package="GARPTools"),"/data", sep = ""), pattern = ".asc", full.names = TRUE)
-files2 <- list.files(path=paste(system.file(package="GARPTools"),"/data", sep = ""), pattern = "task", full.names = TRUE)
-files  <- files1[files1 %in% files2]
-tasks <- stack(files)
-writeRaster(tasks[[1]], "C:/GARP/BestSubsets/task1.asc")
-writeRaster(tasks[[2]], "C:/GARP/BestSubsets/task2.asc")
-writeRaster(tasks[[3]], "C:/GARP/BestSubsets/task3.asc")
-writeRaster(tasks[[4]], "C:/GARP/BestSubsets/task4.asc")
-writeRaster(tasks[[5]], "C:/GARP/BestSubsets/task5.asc")
-writeRaster(tasks[[6]], "C:/GARP/BestSubsets/task6.asc")
-writeRaster(tasks[[7]], "C:/GARP/BestSubsets/task7.asc")
-writeRaster(tasks[[8]], "C:/GARP/BestSubsets/task8.asc")
-writeRaster(tasks[[9]], "C:/GARP/BestSubsets/task9.asc")
-writeRaster(tasks[[10]], "C:/GARP/BestSubsets/task10.asc")
+data(tasks)
+writeRaster(tasks[[1]], "C:/GARP/BestSubsets/task1.asc", overwrite=TRUE)
+writeRaster(tasks[[2]], "C:/GARP/BestSubsets/task2.asc", overwrite=TRUE)
+writeRaster(tasks[[3]], "C:/GARP/BestSubsets/task3.asc", overwrite=TRUE)
+writeRaster(tasks[[4]], "C:/GARP/BestSubsets/task4.asc", overwrite=TRUE)
+writeRaster(tasks[[5]], "C:/GARP/BestSubsets/task5.asc", overwrite=TRUE)
+writeRaster(tasks[[6]], "C:/GARP/BestSubsets/task6.asc", overwrite=TRUE)
+writeRaster(tasks[[7]], "C:/GARP/BestSubsets/task7.asc", overwrite=TRUE)
+writeRaster(tasks[[8]], "C:/GARP/BestSubsets/task8.asc", overwrite=TRUE)
+writeRaster(tasks[[9]], "C:/GARP/BestSubsets/task9.asc", overwrite=TRUE)
+writeRaster(tasks[[10]], "C:/GARP/BestSubsets/task10.asc", overwrite=TRUE)
 ```
 
 ```{r eval = FALSE, echo = TRUE}
