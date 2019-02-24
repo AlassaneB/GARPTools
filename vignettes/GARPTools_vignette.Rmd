@@ -146,8 +146,9 @@ First read in the rasterStack of the ESRI grids available in the GARPTools packa
 ```{r eval = TRUE, echo = FALSE}
 library(raster)
 data(tasks)
+
 writeRaster(tasks[[1]], filename = "task1.asc", format = "ascii", overwrite=TRUE)
-writeRaster(tasks[[2]], "C:/GARP/BestSubsets/task2.asc", overwrite=TRUE)
+writeRaster(tasks[[2]], "C:/GARP/BestSubsets/task2.asc",overwrite=TRUE)
 writeRaster(tasks[[3]], "C:/GARP/BestSubsets/task3.asc", overwrite=TRUE)
 writeRaster(tasks[[4]], "C:/GARP/BestSubsets/task4.asc", overwrite=TRUE)
 writeRaster(tasks[[5]], "C:/GARP/BestSubsets/task5.asc", overwrite=TRUE)
