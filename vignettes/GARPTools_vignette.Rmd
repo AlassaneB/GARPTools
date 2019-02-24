@@ -123,6 +123,11 @@ and McNyset ([2005](http://onlinelibrary.wiley.com/doi/10.1111/j.1600-0633.2005.
 By setting `p` as 0.75 and `iterations` as 10, the `splitData` function randomly selects 75% of the presence locations to subset the initial data set to create a training set of points and repeats this 10 times. The other 25% of the points are reserved for testing post-GARP. By setting `output = TRUE` and specifying an output path, all 10 sets of training and testing points are saved to file. 
 
 It is important to include a root file name that identifies the species, as "test" and "train" will be attached the the file name along with the iteration number (i.e "wtdeer1_test")
+```{r, eval=TRUE, echo=FALSE}
+library(rJava)
+library(xlsx)
+```
+
 ```{r comment = "R>"}
 splitData(points = wtdeer_centroids, p = 0.75, type = "all", iterations = 10, 
           output = TRUE, output.path = "C:/GARP/wtdeer")
