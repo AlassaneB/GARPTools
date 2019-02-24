@@ -106,3 +106,17 @@ summary(r.sum)
 ## ----comment = "R>"------------------------------------------------------
 freq(r.sum)
 
+## ----eval = TRUE, echo = FALSE-------------------------------------------
+library(maptools)
+
+## ----echo = -1, message = FALSE, warning = FALSE, fig.width=4, fig.height=3, fig.align = "center", fig.cap = "Best subset of models output by DesktopGARP with testing points."----
+par(mar=c(2,2,2,1))
+test.pts <- readShapePoints("C:/GARP/wtdeer1_test.shp")
+plot(r.sum)
+plot(nc_boundary, add = TRUE)
+points(test.pts, pch = 16)
+
+## ----echo = -1, comment = "R>", fig.width=4, fig.height=4, fig.align = "center", fig.cap = "Plot of the Receiver Operating Characteristic (ROC) curve."----
+par(mar=c(2,2,2,1))
+aucGARP(n = 10, x = r.sum, points = test.pts)
+
