@@ -219,8 +219,8 @@ The ROC plot (Figure 5), standard error and z-value associated with the AUC, and
 Total and average commission and omission can be calculated by the confusion matrix. Total commission is calculated as the total number of pixels predicted present across all ten models, divided by the total number of pixels in the study area. Average commission is calculated as the average of the total number of cells predicted present, divided by the total number of pixels within the study area on a model-by-model basis for each of the 10 models of the best subset folder (directed in the `file.path` argument): 
 
 ```{r comment = "R>"}
-commissionG(n = 10, x = r.sum, points = test.pts, file.path = "C:/GARP/BestSubsets/")
-omissionG(n = 10, x = r.sum, points = test.pts)
+commissionGARP(n = 10, x = r.sum, points = test.pts, file.path = "C:/GARP/BestSubsets/")
+omissionGARP(n = 10, x = r.sum, points = test.pts)
 ```
 
 Now that we have the AUC score, the commission and omission metrics, and the z-scores and standard error, we can produce a table that ranks the 10 models from highest to lowest AUC scores:
