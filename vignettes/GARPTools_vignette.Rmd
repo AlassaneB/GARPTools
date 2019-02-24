@@ -196,6 +196,11 @@ freq(r.sum)
 To calculate the AUC for a discrete variable such as presence, individual cutpoints of the best subset raster act as thresholds of the ROC curve. By calculating the AUC for a finite number of potential thresholds (here defined by the `n` argument), it's equivalent to calculating the non-parametric Wilcoxon's statistic. This is derived from [McNyset 2005](http://onlinelibrary.wiley.com/doi/10.1111/j.1600-0633.2005.00101.x/abstract).
 
 AUC is calculated by overlaying the testing points (`points` argument) withheld from the sample data using the 'splitData' function on top of the summed raster from the `sumRasters` function (`x` argument):
+```{r eval = TRUE, echo = FALSE}
+library(maptools)
+```
+
+
 ```{r echo = -1, message = FALSE, warning = FALSE, fig.width=4, fig.height=3, fig.align = "center", fig.cap = "Best subset of models output by DesktopGARP with testing points."}
 par(mar=c(2,2,2,1))
 test.pts <- readShapePoints("C:/GARP/wtdeer1_test.shp")
