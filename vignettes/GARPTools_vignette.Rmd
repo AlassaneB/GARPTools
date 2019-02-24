@@ -144,8 +144,9 @@ Collapsing the 10 individual binary presence/absence ESRI grids from the BestSub
 First read in the rasterStack of the ESRI grids available in the GARPTools package and write them into a "BestSubsets" folder to simulate the output from GARP:
 
 ```{r eval = TRUE, echo = FALSE}
+library(raster)
 data(tasks)
-writeRaster(tasks[[1]], "C:/GARP/BestSubsets/task1.asc", overwrite=TRUE)
+writeRaster(tasks[[1]], filename = "task1.asc", format = "ascii", overwrite=TRUE)
 writeRaster(tasks[[2]], "C:/GARP/BestSubsets/task2.asc", overwrite=TRUE)
 writeRaster(tasks[[3]], "C:/GARP/BestSubsets/task3.asc", overwrite=TRUE)
 writeRaster(tasks[[4]], "C:/GARP/BestSubsets/task4.asc", overwrite=TRUE)
