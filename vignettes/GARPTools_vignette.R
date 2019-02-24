@@ -36,3 +36,24 @@ data("nc_boundary")
 data("alt")
 
 
+## ---- eval = TRUE, echo = FALSE------------------------------------------
+library(SDMTools)
+
+## ----comment = "R>", warning = FALSE, message = FALSE, results = "hide"----
+rasterPrep(file.path = "C:/GARP/rasters", mask = nc_boundary, 
+           output.path = "C:/GARP/resampled/")
+
+## ----comment = "R>"------------------------------------------------------
+data("wtdeer_locations")
+alt_resample <- raster("C:/GARP/resampled/alt_resample.asc")
+
+wtdeer_centroids <- centroid(x = alt_resample, points = wtdeer_locations, 
+                             xy = wtdeer_df[,c("Latitude","Longitude")],
+                             species = wtdeer_df$Species)
+
+## ----comment = "R>", echo = -1, fig.width=4, fig.height=3, fig.align = "center", fig.cap = "Resampled altitude map of sampling area with sampling points (black) and centroid points (purple)."----
+par(mar=c(2,2,2,1))
+plot(alt_resample)
+points(wtdeer_locations, pch = 16)
+points(wtdeer_centroids, col = "purple")
+
