@@ -1,7 +1,7 @@
 ---
 title: 'GARPTools: An R Package for DesktopGARP Data Preparation and Model Assessment'
 author: 'Developed by: Catherine G. Haase, Anni Yang, Cody Griffin, and Jason K. Blackburn'
-date: 'Last Updated: 4 November 2016'
+date: 'Last Updated: 24 Feb 2019'
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{GARPTools: An R Package for DesktopGARP Data Preparation and Model}
